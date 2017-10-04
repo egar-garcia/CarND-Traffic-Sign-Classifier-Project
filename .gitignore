@@ -4,3 +4,7 @@ data
 models
 *.swp
 *.p
+traffic-signs-data.zip
+checkpoint
+data_summary.png
+lenet.*
