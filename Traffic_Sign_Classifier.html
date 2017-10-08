@@ -18761,7 +18761,7 @@ yFMBQ0RERERERESGvP8D37t+R5AdQ2gAAAAASUVORK5CYII=
 
     <span class="c1"># Layer 2: Convolutional. Output = 10x10x64.</span>
     <span class="n">conv2</span> <span class="o">=</span> <span class="n">activation</span><span class="p">(</span><span class="n">convolutional2D</span><span class="p">(</span><span class="n">maxpool_conv1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="s2">&quot;conv2&quot;</span><span class="p">))</span>
-    <span class="c1"># Pooling. Input = 10x10x64. Output = 5x5x16.</span>
+    <span class="c1"># Pooling. Input = 10x10x64. Output = 5x5x64.</span>
     <span class="n">maxpool_conv2</span> <span class="o">=</span> <span class="n">maxPool</span><span class="p">(</span><span class="n">conv2</span><span class="p">)</span>
 
     <span class="c1"># Flatten. Input = 5x5x64. Output = 1600.</span>
@@ -18834,12 +18834,11 @@ yFMBQ0RERERERESGvP8D37t+R5AdQ2gAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">EPOCHS</span>             <span class="o">=</span> <span class="mi">50</span>  <span class="c1">#30 #10</span>
-<span class="n">BATCH_SIZE</span>         <span class="o">=</span> <span class="mi">128</span> <span class="c1">#128</span>
-<span class="n">LEARNING_RATE</span>      <span class="o">=</span> <span class="mf">0.001</span> <span class="c1">#0.001</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">EPOCHS</span>             <span class="o">=</span> <span class="mi">50</span>
+<span class="n">BATCH_SIZE</span>         <span class="o">=</span> <span class="mi">128</span>
+<span class="n">LEARNING_RATE</span>      <span class="o">=</span> <span class="mf">0.001</span>
 <span class="n">MIN_ACCURACY</span>       <span class="o">=</span> <span class="mf">0.945</span>
 
-<span class="c1">#x                  = tf.placeholder(tf.float32, (None, 32, 32, 3))</span>
 <span class="n">x</span>                  <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">y</span>                  <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">))</span>
 <span class="n">one_hot_y</span>          <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">)</span>
